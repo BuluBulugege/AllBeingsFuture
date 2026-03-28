@@ -13,7 +13,7 @@
     "build:renderer": "cd frontend && npm run build",
     "build:electron": "tsc -p electron/tsconfig.json",
     "pack": "npm run build && electron-builder --win",
-    "pack:mac": "npm run build && electron-builder --mac",
+    "pack:mac": "npm run build && electron-rebuild -f -w better-sqlite3 && electron-builder --mac",
     "postinstall": "cd frontend && npm install"
   },
   "dependencies": {
@@ -39,6 +39,7 @@
     "concurrently": "^9.1.0",
     "electron": "^33.3.0",
     "electron-builder": "^25.1.8",
+    "electron-rebuild": "^3.2.9",
     "typescript": "^5.7.2"
   },
   "build": {
